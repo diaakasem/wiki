@@ -8,11 +8,14 @@ lang_selector =
   en: (html) ->
     $ "div#mp-tfa b>a", html
 
-  nl: (html) ->
-    $(".radius", html).first().find('a').last()
+  de: (html) ->
+    $ "div#mf-tfa b>a", html
 
-  ar: (html) ->
-    $ "div#mf-fa p>b>a", html
+  #nl: (html) ->
+    #$(".radius", html).first().find('a').last()
+
+  #ar: (html) ->
+    #$ "div#mf-fa p>b>a", html
 
 class Wikipedia
   getWikiLink: (lang, handler) ->
@@ -119,5 +122,5 @@ class Scheduler
 
 $ ->
   scheduler = new Scheduler()
-  cron = "30 21 * * *"
+  cron = "30 12 * * *"
   scheduler.addSchedule(cron, {}, Manager).start()
